@@ -1,0 +1,541 @@
+:root{
+    --main-color :#343434;
+    --p-color : #748182;
+    --bg-color: #1c1c1c;
+    --port-color: #222222;
+    --testi-p-color: #748182;
+    --black-color: #000;
+    --white-color: #fff;
+    --even-bg: #f4f4f4;
+    --active-color: #fff;
+}
+*{
+    transition: all .5s;
+}
+@media (max-width:575px) {
+    body{
+        overflow-x: hidden;
+    }
+}
+/* Scrollbar Style */
+::-webkit-scrollbar{
+    width: 10px;
+}
+::-webkit-scrollbar-track{
+    box-shadow: inset 0 0 5px var(--main-color); 
+    background-color: #CCC;
+}
+::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+    background-color: var(--main-color);
+}
+/* End Scrollbar Style */
+section:nth-of-type(even){
+    background-color: var(--even-bg);
+}
+a{
+    text-decoration: none;
+    font-family: "poppins", sans-serif;
+    color: var(--black-color);
+}
+ul{
+    list-style-type: none;
+}
+h1,h2,h3,h4,h5,h6,.navbar-brand{
+    font-family: "Montserrat", sans-serif;
+    color: var(--main-color);
+}
+p, span{
+    font-family: "poppins", sans-serif;
+    color: var(--p-color);
+}
+.head-section h2{
+    width: fit-content;
+    font-size: 40px;
+    font-weight: 900;
+    color: var(--main-color);
+}
+.head-section h2::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 80%;
+    left: 0;
+    bottom: -8px;
+    background-image: url("../image/dots.png");
+    background-repeat: repeat;
+    z-index: -1;
+}
+/* Start Scroll Up */
+.scroll-up{
+    background-color: var(--main-color);
+    cursor: pointer;
+}
+/* End Scroll Up */
+/* Start Navbar Section */
+.navbar {
+    position: absolute;
+    top: 10px;
+    background-color: transparent;
+}
+nav .navbar-brand{
+    color: var(--white-color);
+}
+nav .navbar-nav .nav-item a{
+    color: var(--white-color);
+    font-size: 14px;
+    transition: all .3s;
+}
+nav .navbar-nav .nav-item a::before{
+    content: "";
+    position: absolute;
+    bottom: 4px;
+    left: 0;
+    width: 0;
+    height: 0;
+    background-color: var(--active-color) !important;
+    transition: all .3s;
+}
+nav .navbar-nav .nav-item .active::before{
+    width: 100%;
+    height: 2px;
+    color: var(--active-color) !important;
+}
+nav .navbar-nav .nav-item a:hover::before{
+    width: 100%;
+    height: 2px;
+}
+nav .navbar-nav li .active{
+    color: var(--active-color) !important;
+}
+nav .navbar-toggler span{
+    background-image: none;
+}
+nav .navbar-toggler span i{
+    color: var(--white-color);
+    text-align: center;
+}
+
+@media (max-width:992px) {
+    nav .navbar-nav .nav-item a::before{
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    nav .navbar-nav .nav-item a:hover::before{
+        width: 40%;
+    }
+    nav .navbar-nav .nav-item .active::before{
+        width: 40%;
+    }
+}
+/* End Navbar Section */
+
+/* Start Home Section */
+#home{
+    background-image: linear-gradient(to right,#000000a8,#000000a8),url("../image/bg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+#home .home-info h1{
+    font-weight: 200;
+}
+#home .home-info h1 span{
+    font-weight: 400;
+}
+#home .home-info .icon-home .icon{
+    width: 40px;
+    height: 40px;
+    background-color: #0000004d;
+    cursor: pointer;
+}
+#home .home-info .icon-home .icon:hover{
+    background-color: var(--white-color);
+}
+#home .home-info .icon-home .icon:hover i{
+    color: var(--black-color);
+}
+#home .home-info .down-home{
+    bottom: -165px;
+    width: 25px;
+    height: 50px;
+    cursor: pointer;
+}
+#home .home-info .down-home i{
+    animation: up-down 1s alternate infinite;
+}
+@keyframes up-down {
+    0%{
+        top: 10%;
+    }
+    100%{
+        top: 50%;
+    }
+}
+/* End Home Section */
+
+/* Start Section About */
+#about .about-image::before{
+    content: "";
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    left: 0;
+    bottom: -30px;
+    background-image: url("../image/dots.png");
+    background-repeat: repeat;
+    z-index: -1;
+}
+#about .about-info h3{
+    font-weight: 800;
+}
+#about .about-info .title-about{
+    font-size: 14px;
+    color: #999;
+    letter-spacing: 1.7px;
+}
+#about .about-info p{
+    letter-spacing: .5px;
+}
+#about .about-info .prog{
+    background-color: var(--even-bg);
+    box-shadow: inset 0 0 8px 1px #ccc;
+    height: 25px;
+}
+#about .about-info .prog .web, #about .about-info .prog .brand, #about .about-info .prog .develop{
+    background-color: var(--bg-color);
+    width: 0;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    transition: all .8s;
+}
+#about .about-info .prog .prog-name{
+    font-size: 14px;
+}
+#about .about-info .prog .prog-avr{
+    font-size: 12px;
+}
+#about .about-info .button-about .download{
+    background-color: var(--bg-color);
+}
+#about .about-info .button-about .download:hover{
+    background-color: var(--white-color) !important;
+    color: var(--black-color) !important;
+}
+#about .about-info .button-about .call:hover{
+    background-color: var(--bg-color) !important;
+    color: var(--white-color) !important;
+}
+/* End Section About */
+
+/* Start Services Section */
+#services .icon-service{
+    width:75px;
+    height: 75px;
+    background-color: var(--even-bg);
+}
+#services .box-servies:hover .icon-service{
+    background-color: var(--black-color) !important;
+}
+#services .box-servies:hover .icon-service i{
+    color: var(--white-color) !important;
+}
+#services h4{
+    font-weight: 800;
+}
+#services p{
+    font-size: 14px;
+    line-height: 1.7;
+}
+/* End Services Section */
+
+/* Start Portfolio Section */
+#portfolio .items-portofolio li button{
+    color: var(--black-color);
+    font-family: "poppins", sans-serif;
+}
+#portfolio .items-portofolio li button::before{
+    content:"";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--black-color);
+    transition: all .5s;
+}
+#portfolio .items-portofolio li .active::before, #portfolio .items-portofolio li button:hover::before{
+    width: 100%;
+}
+#portfolio figure figcaption{
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    transform: translateY(10px);
+    background-color: #ffffffe3;
+    opacity: 0;
+}
+#portfolio figure:hover figcaption{
+    opacity: 1;
+    transform: translateY(0);
+}
+#portfolio figure figcaption h6{
+    transform: translateY(-20px);
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 1.7px;
+}
+#portfolio figure:hover figcaption h6{
+    transform: translateY(0);
+}
+#portfolio figure figcaption .icon-portfolio i{
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 12px;
+    cursor: pointer;
+}
+#portfolio figure figcaption .icon-portfolio i:hover{
+    background-color: var(--white-color) !important;
+    color: var(--black-color) !important;
+}
+.demo {
+    background-color: #000000c5;
+    z-index: 1000;
+    display: none;
+}
+.demo .exit{
+    top: 5px;
+    right: 10px;
+}
+.demo .exit i{
+    cursor: pointer;
+}
+#owl-demo .item img{
+    width: 580px;
+}
+#owl-demo .item span{
+    font-size: 12px;
+}
+@media (max-width: 992px) {
+    #owl-demo .item img{
+        width: 550px;
+    }
+}
+@media (max-width: 575px) {
+    #owl-demo .item img{
+        width: 95%;
+    }
+}
+
+/*########### Another Way Filter Portfolio ####################*/
+/* #portfolio .shuffle li{
+    cursor: pointer;
+}
+#portfolio .shuffle li::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--bg-color);
+    transition: all .5s
+}
+#portfolio .shuffle .active::before,#portfolio .shuffle li:hover::before{
+    width: 100%;
+} */
+
+/* #portfolio .portfolio-box .overlay-portfolio{
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    transform: translateY(10px);
+    background-color: #ffffffe3;
+    opacity: 0;
+}
+#portfolio .portfolio-box:hover .overlay-portfolio{
+    opacity: 1;
+    transform: translateY(0);
+}
+#portfolio .portfolio-box .overlay-portfolio .overlay-content h6{
+    transform: translateY(-20px);
+    font-weight: 600;
+    font-size: 14px;
+}
+#portfolio .portfolio-box:hover .overlay-portfolio .overlay-content h6{
+    transform: translateY(0);
+}
+#portfolio .portfolio-box .overlay-portfolio .overlay-content .icon-portfolio i{
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+    cursor: pointer;
+}
+#portfolio .portfolio-box .overlay-portfolio .overlay-content .icon-portfolio i:hover{
+    background-color: #fff !important;
+    color: #000 !important;
+} */
+/*########### Another Way Filter Portfolio ####################*/
+
+/* End Portfolio Section */
+
+/* Start Testimonials Section */
+.swiper-slide .testi-info p{
+    font-size: 15px;
+    letter-spacing: .5px;
+}
+.swiper-slide .testi-info h6{
+    font-size: 16px;
+    font-weight: 600;
+}
+.swiper-slide .testi-info span{
+    font-size: 12px;
+    font-weight: 600;
+}
+.swiper .swiper-pagination-bullet{
+    width: 10px;
+    height: 10px;
+    margin-inline: 7px !important;
+    background-color: var(--p-color);
+}
+.counter .count-box {
+    color: var(--main-color);
+}
+.counter .count-box h6{
+    font-weight: 900;
+}
+.counter .count-box p{
+    font-weight: 600;
+}
+/* End Testimonials Section */
+
+/* Start Clients Section */
+#client .image-client .overlay-client{
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    background-color: #ffffffe3;
+    transform: rotateY(180deg) scale(.5);
+    cursor: pointer;
+    opacity: 0;
+}
+#client .image-client .overlay-client ul li a{
+    width: 40px;
+    height: 40px;
+    background-color: var(--black-color);
+    color: var(--white-color);
+}
+#client .image-client .overlay-client ul li a:hover{
+    background-color: var(--white-color);
+}
+#client .image-client .overlay-client ul li a:hover i{
+    color:var(--black-color);
+}
+#client .client-info .image-client:hover img{
+    transform: scale(1.1);
+}
+#client .client-info:hover .image-client .overlay-client{
+    transform: rotateY(360deg) scale(1);
+    opacity: 1;
+}
+/* End Clients Section */
+
+/* Start Contact Section */
+#contact .contact-info .icon-contact{
+    width: 60px;
+    height: 60px;
+    background-color: var(--even-bg);
+}
+#contact .contact-info .icon-contact:hover{
+    background-color: var(--black-color);
+}
+#contact .contact-info .icon-contact:hover  i{
+    color: var(--white-color);
+}
+#contact .contact-info h5{
+    font-size: 16px;
+    font-weight: 700;
+}
+#contact .contact-info p{
+    font-size: 15px;
+}
+#contact form input, #contact form textarea{
+    background-color: var(--even-bg);
+}
+#contact form textarea{
+    height: 200px;
+}
+#contact form button:hover{
+    background-color: var(--white-color) !important;
+    color: var(--black-color) !important;
+}
+/* End Contact Section */
+
+/* Load Page */
+.load{
+    z-index: 2000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: hide-load 1.5s .5s forwards;
+}
+.load::before,.load::after{
+    content: "";
+    position: absolute;
+    transform: translate(-50%,-50%);
+    width: 100%;
+    height: 100.5%;
+    background-color: #EEE;
+    z-index: -1;
+    animation: 1.5s .5s forwards;
+}
+.load::before{
+    top:0;
+    left: 50%;
+    animation-name:load-up;
+}
+.load::after{
+    top: 100%;
+    left: 50%;
+    animation-name:load-down;
+}
+@keyframes load-up {
+    0%{
+        height: 100.5%;
+    }
+    100%{
+        height: 0;
+    }
+}
+@keyframes load-down {
+    0%{
+        height: 100.5%;
+    }
+    100%{
+        height: 0;
+    }
+}
+@keyframes hide-load {
+    0%{
+        display: flex;
+    }
+    100%{
+        opacity: 0;
+        display: none;
+    }
+}
+.loader {
+    width: 80px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 8px solid;
+    border-color: #000 #0000;
+    animation: l1 1s infinite linear;
+}
+@keyframes l1 {to{transform: rotate(.5turn)}}
